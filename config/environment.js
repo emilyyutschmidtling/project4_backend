@@ -1,8 +1,8 @@
 var _ = require('lodash');
 
 var localEnvVars = {
-  TITLE: 'Auth App',
-  SAFE_TITLE: 'auth-app',
+  TITLE: 'CARbon Footprints',
+  SAFE_TITLE: 'carbon-footprints',
   TOKEN_SECRET: process.env.TOKEN_SECRET
 };
 
