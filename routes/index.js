@@ -11,8 +11,11 @@ var usersCtrl = require('../controllers/users');
 var token = require('../config/token_auth');
 
 // users resource paths:
+router.get('/users', usersCtrl.index);
 router.post('/users', usersCtrl.create);
 router.get('/users/me', token.authenticate, usersCtrl.me);
+router.patch('/users/me', token.authenticate, usersCtrl.update);
+router.delete('/users/me', token.authenticate, usersCtrl.destroy);
 
 // resource path for getting a token:
 router.post('/token', token.create);
