@@ -33,7 +33,8 @@ function create(req, res, next) {
         data: {
           userName: user.userName,
           email: user.email,
-          id: user._id
+          id: user._id,
+          createdAt: user._id.getTimestamp()
         }
       });
     }).catch(function(err) {
@@ -73,6 +74,8 @@ function update(req, res, next) {
       if(req.body.password) user.password = req.body.password;
       user.save(function(err) {
         if(err) res.json({message: 'Could not update user because:' + err});
+        console.log(user);
+        user.updatedAt = Date.now;
         res.json({message: 'User successfuly updated', user: user});
       });
     });
