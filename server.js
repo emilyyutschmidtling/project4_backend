@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('app:http');
 
-require('dotenv').config();
+// require('dotenv').config();
+require('dotenv').load({silent: true});
+
 
 var env = require('./config/environment')
 
