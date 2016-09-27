@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var cors = require('cors');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -30,6 +31,7 @@ app.locals.title = app.get('title');
 
 // CORS to allow separate client like Postman to send requests
 app.use(allowCors);
+app.use(cors());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
