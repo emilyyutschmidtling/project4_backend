@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var cors = require('cors');
+// var cors = require('cors');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -31,7 +31,7 @@ app.locals.title = app.get('title');
 
 // CORS to allow separate client like Postman to send requests
 app.use(allowCors);
-app.use(cors());
+// app.use(cors());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -74,7 +74,7 @@ function debugReq(req, res, next) {
 function allowCors(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Authorization');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
 
   if('OPTIONS' == req.method) {
     res.send(200);
