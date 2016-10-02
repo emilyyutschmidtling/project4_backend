@@ -1,4 +1,4 @@
-var Address = require('../models/address');
+var Trip = require('../models/trip');
 
 module.exports = {
   index: index,
@@ -9,7 +9,8 @@ module.exports = {
 }
 
 function index(req, res, next) {
-  Address.find({}, function(err, addresses) {
-    if (err) 
+  Trip.find({}, function(err, trips) {
+    if (err) next(err);
+    res.json(trips);
   })
 }

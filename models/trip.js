@@ -10,7 +10,8 @@ var TripSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }],
-  createdAt: {type: Date, default: Date.now}
+  createdAt: {type: Date, default: Date.now};
+  updatedAt: {type: Date, default: Date.now};
 });
 
 var Trip = mongoose.model('Trip', TripSchema);

@@ -20,7 +20,7 @@ router.delete('/users/me', token.authenticate, usersCtrl.destroy);
 // resource path for getting a token:
 router.post('/token', token.create);
 
-// addresses resource paths:
-// router.post('/addresses', addressesCtrl.create);
+// trips resource paths:
+router.get('/trips', tripsCtrl.index);
 
 module.exports = router;
